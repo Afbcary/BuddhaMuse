@@ -1,0 +1,36 @@
+<!-- ideas: random background color and flash color. emotions coming from pie chart. accompanying emotion icons. auto-sizing font. different animation? -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Buddha Muse</title>
+	</head>
+<body id="body" onclick="doFlash()">
+	<div id="header"></div>
+	<div id="prompt">happy hippy</div>
+	<div id="footer"></div>
+	<div id="overlay"></div>
+</body>
+<link rel="stylesheet" type="text/css" href="buddhaMuse.css" />
+<script>
+	var generatorrrr = function() {
+			var adjs = ["happy","sad","scared","joyous","mad", "aloof"];
+			var nouns = ["tomato","cat","remote","lamp","mouse","hippy","Obama","shrek butt", "Figgy", "Helena"];
+
+			var adjIndex = Math.floor(Math.random() * Math.floor(adjs.length));
+			var nounIndex = Math.floor(Math.random() * Math.floor(nouns.length));
+
+			var prompt = adjs[adjIndex] + " " + nouns[nounIndex];
+			var element = document.getElementById("prompt");	
+			element.innerText = prompt;
+	}
+
+	var doFlash = function() {
+		generatorrrr();
+		var element = document.getElementById("overlay");
+    element.classList.add("flash");
+    setTimeout(function() {
+         element.classList.remove("flash");
+    }, 500);
+	};
+</script>
+</html>
